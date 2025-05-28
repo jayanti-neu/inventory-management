@@ -1,11 +1,13 @@
 {
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10"
   },
   "scripts": {
     "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "dev": "concurrently \"nodemon ./backend/server.js\" \"npm run start:client\"",
     "start:server": "node ./backend/server.js",
     "start:client": "cd frontend && npm run dev",
-    "installall": "cd frontend && npm install && cd ../backend && npm install"
+    "installall": "npm i && cd frontend && npm install && cd ../backend && npm install"
   }
 }
